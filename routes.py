@@ -1,4 +1,5 @@
 from flask import Flask, url_for, render_template
+import os
 
 app = Flask(__name__)
 
@@ -10,6 +11,7 @@ def index():
 @app.route("/about")
 def about():
 	return render_template("about.html")
-
+	
 if __name__ == "__main__":
+	list_files("..")
 	app.run(debug=True)
